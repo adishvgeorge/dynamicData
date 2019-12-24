@@ -2,7 +2,7 @@
     <form #myform="ngForm">
         <h1 mat-dialog-title style="text-align: center;"><strong>{{action}}</strong></h1>
         <div mat-dialog-content>
-            <mat-form-field *ngIf="action != 'Delete'; else elseTemplate1" class="example-full-width">
+            <mat-form-field *ngIf="action != 'Delete';" class="example-full-width">
                 <input matInput type="number" placeholder="Company ID" [(ngModel)]="local_data.id" name="id"
                     minlength="4" #FN="ngModel" required>
                 <mat-error *ngIf="FN.invalid">Please enter ID</mat-error>
@@ -12,12 +12,12 @@
                     minlength="1" #MN="ngModel" required>
                 <mat-error *ngIf="MN.invalid">Please enter Company Name</mat-error>
             </mat-form-field>
-            <mat-form-field *ngIf="action != 'Delete'; else elseTemplate1" class="example-full-width">
+            <mat-form-field *ngIf="action != 'Delete';" class="example-full-width">
                 <input matInput type="number" placeholder="Profit" [(ngModel)]="local_data.y" name="y" minlength="1"
                     #UN="ngModel" required>
                 <mat-error *ngIf="UN.invalid">Please enter Profit</mat-error>
             </mat-form-field>
-            <mat-form-field *ngIf="action != 'Delete'; else elseTemplate1" class="example-full-width">
+            <mat-form-field *ngIf="action != 'Delete';" class="example-full-width">
                 <input matInput placeholder="Period(YEAR)" type="number" [(ngModel)]="local_data.period" name="period"
                     minlength="1" #PW="ngModel" required>
                 <mat-error *ngIf="PW.invalid">Please enter Period</mat-error>
