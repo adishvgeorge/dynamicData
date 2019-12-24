@@ -1,0 +1,24 @@
+.example-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.example-full-width {
+    width: 100%;
+  }
+
+button[disabled]:hover {
+    cursor: not-allowed;
+    }
+
+.actionbtn{
+    background-color: #4bc3b8;
+}    
+.btngp{
+    margin-left: 75px;
+}
+@media only screen and (max-width:  420px) {
+    .btngp{
+        margin-left: 45px;
+    }
+}

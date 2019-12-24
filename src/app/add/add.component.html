@@ -1,0 +1,59 @@
+<mat-card-content class="example-container">
+    <form #myform="ngForm">
+        <h1 mat-dialog-title style="text-align: center;"><strong>{{action}}</strong></h1>
+        <div mat-dialog-content>
+            <mat-form-field *ngIf="action != 'Delete'; else elseTemplate1" class="example-full-width">
+                <input matInput type="number" placeholder="Company ID" [(ngModel)]="local_data.id" name="id"
+                    minlength="4" #FN="ngModel" required>
+                <mat-error *ngIf="FN.invalid">Please enter ID</mat-error>
+            </mat-form-field>
+            <mat-form-field *ngIf="action != 'Delete'; else elseTemplate" class="example-full-width">
+                <input matInput placeholder="{{action}} Company Name" [(ngModel)]="local_data.name" name="name"
+                    minlength="1" #MN="ngModel" required>
+                <mat-error *ngIf="MN.invalid">Please enter Company Name</mat-error>
+            </mat-form-field>
+            <mat-form-field *ngIf="action != 'Delete'; else elseTemplate1" class="example-full-width">
+                <input matInput type="number" placeholder="Profit" [(ngModel)]="local_data.y" name="y" minlength="1"
+                    #UN="ngModel" required>
+                <mat-error *ngIf="UN.invalid">Please enter Profit</mat-error>
+            </mat-form-field>
+            <mat-form-field *ngIf="action != 'Delete'; else elseTemplate1" class="example-full-width">
+                <input matInput placeholder="Period(YEAR)" type="number" [(ngModel)]="local_data.period" name="period"
+                    minlength="1" #PW="ngModel" required>
+                <mat-error *ngIf="PW.invalid">Please enter Period</mat-error>
+            </mat-form-field>
+            <ng-template #elseTemplate>
+                Sure to delete <b>{{local_data.name}}</b>?
+            </ng-template>
+        </div>
+        <div mat-dialog-actions class="btngp">
+            <button mat-button class="actionbtn" (click)="doAction()" [disabled]="myform.invalid">{{action}}</button>
+            <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+        </div>
+    </form>
+</mat-card-content>
+
+
+<!-- dialog-box.component.html -->
+<!-- <h1 mat-dialog-title>Row Action == <strong>{{action}}</strong></h1>
+<div mat-dialog-content>
+    <mat-form-field *ngIf="action != 'Delete'; else elseTemplate1">
+        <input placeholder="{{action}} Id" matInput [(ngModel)]="local_data.id">
+    </mat-form-field>
+    <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+        <input placeholder="{{action}} Name" matInput [(ngModel)]="local_data.name">
+    </mat-form-field>
+    <mat-form-field *ngIf="action != 'Delete'; else elseTemplate2">
+        <input placeholder="{{action}} Profit" matInput [(ngModel)]="local_data.profit">
+    </mat-form-field>
+    <mat-form-field *ngIf="action != 'Delete'; else elseTemplate3">
+        <input placeholder="{{action}} Period" matInput [(ngModel)]="local_data.period">
+    </mat-form-field>
+    <ng-template #elseTemplate>
+        Sure to delete <b>{{local_data.name}}</b>?
+    </ng-template>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="doAction()">{{action}}</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div> -->

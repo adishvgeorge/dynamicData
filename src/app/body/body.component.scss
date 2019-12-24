@@ -1,0 +1,49 @@
+.mat{
+    width: 100%;
+    margin-top: 60px;
+}
+
+.example-container {
+    overflow: auto;
+    height: 140px;
+    width: 100%;
+    margin-top: 5px;
+    }
+      
+table {
+    width: 100%;
+    }    
+
+.matHead {
+    height: 40vh;
+    }     
+
+// @media only screen and (max-width: 600px) {
+//     .mat2{
+//         height: 505px;
+//      }
+    
+//     } 
+@media (min-width: 1281px) {
+  
+    .matHead{
+        height: 111vh;
+    }
+    
+  }
+@media only screen and (min-width: 600px) {
+    .matHead{
+       height: 175vh;
+   }
+   }  
+  
+@media only screen and (min-width: 768px) {
+    .matHead{
+      height: 120vh;
+   }
+   } 
+   @media (min-width: 320px) and (max-width: 480px) {
+    .matHead{
+        height:174vh;
+    }
+}
